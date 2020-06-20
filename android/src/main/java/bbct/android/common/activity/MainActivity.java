@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
 
     private static final String TAG = MainActivity.class.getName();
 
-    private FirebaseAnalytics analytics;
     private SharedPreferences prefs;
     private FragmentManager fragmentManager;
 
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements FragmentManager.O
         if (!BuildConfig.DEBUG) {
             Fabric.with(this, new Crashlytics());
         }
-        analytics = FirebaseAnalytics.getInstance(this);
+        FirebaseAnalytics.getInstance(this);
 
         this.setContentView(R.layout.main);
         fragmentManager = getSupportFragmentManager();
